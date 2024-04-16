@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spinning Word Cloud</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #ffffff;
+        font-family: "Helvetica", "Arial", sans-serif;
+      }
+
+      .word-cloud {
+        position: relative;
+        perspective: 800px;
+        transform-style: preserve-3d;
+        animation: spin 20s linear infinite;
+      }
+
+      .word {
+        position: absolute;
+        font-size: 16px;
+        color: #333;
+        transform-origin: center center;
+      }
+
+      /* Animation */
+      @keyframes spin {
+        from {
+          transform: rotateY(0);
+        }
+        to {
+          transform: rotateY(360deg);
+        }
+      }
+
+      .icons {
+        width: 30px;
+        height: 30px;
+        transform: scale(1.0);
+        transition: transform 0.5s;
+      }
+
+      .icons:hover{
+        transform: scale(1.5);
+      }
+
+      #techName {
+        position: fixed;
+        margin-top: 110px;
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="word-cloud">
+      <div
+        class="word"
+        style="transform: rotateY(0deg) translateZ(200px)"
+        onmouseover="displayName('React')"
+        onmouseout="displayName('')"
+      >
+        <img class="icons" src="./images/logos/react.png" />
+      </div>
+      <div
+        class="word"
+        style="transform: rotateY(36deg) translateZ(200px)"
+        onmouseover="displayName('PHP')"
+        onmouseout="displayName('')"
+      >
+        <img class="icons" src="./images/logos/php.png" />
+      </div>
+      <div
+        class="word"
+        style="transform: rotateY(72deg) translateZ(200px)"
+        onmouseover="displayName('JavaScript')"
+        onmouseout="displayName('')"
+      >
+        <img class="icons" src="./images/logos/javascript.png" />
+      </div>
+      <div
+        class="word"
+        style="transform: rotateY(108deg) translateZ(200px)"
+        onmouseover="displayName('WooCommerce')"
+        onmouseout="displayName('')"
+      >
+        <img class="icons" src="./images/logos/wooCommerce.png" />
+      </div>
+      <div
+        class="word"
+        style="transform: rotateY(144deg) translateZ(200px)"
+        onmouseover="displayName('Linux')"
+        onmouseout="displayName('')"
+      >
+        <img class="icons" src="./images/logos/linux.png" />
+      </div>
+      <div
+        class="word"
+        style="transform: rotateY(180deg) translateZ(200px)"
+        onmouseover="displayName('Shopify')"
+        onmouseout="displayName('')"
+      >
+        <img class="icons" src="./images/logos/shopify.png" />
+      </div>
+      <div
+        class="word"
+        style="transform: rotateY(216deg) translateZ(200px)"
+        onmouseover="displayName('Figma')"
+        onmouseout="displayName('')"
+      >
+        <img class="icons" src="./images/logos/figma.png" />
+      </div>
+      <div
+        class="word"
+        style="transform: rotateY(252deg) translateZ(200px)"
+        onmouseover="displayName('WordPress')"
+        onmouseout="displayName('')"
+      >
+        <img class="icons" src="./images/logos/wordpress.png" />
+      </div>
+      <div
+        class="word"
+        style="transform: rotateY(288deg) translateZ(200px)"
+        onmouseover="displayName('SquareSpace')"
+        onmouseout="displayName('')"
+      >
+        <img class="icons" src="./images/logos/squarespace.png" />
+      </div>
+      <div
+        class="word"
+        style="transform: rotateY(324deg) translateZ(200px)"
+        onmouseover="displayName('EditorX')"
+        onmouseout="displayName('')"
+      >
+        <img class="icons" src="./images/logos/editorx.png" />
+      </div>
+    </div>
+    <kbd id="techName" class="kdb"></kbd>
+    <script>
+      function displayName(value) {
+        var techName = document.getElementById("techName");
+        techName.innerHTML = value;
+      }
+    </script>
+  </body>
+</html>

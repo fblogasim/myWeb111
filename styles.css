@@ -1,0 +1,365 @@
+
+body{
+  font-size: 22px;
+}
+ 
+/*change the navbar background color*/
+nav *{
+  font-size: 22px;
+}
+
+.navbar-custom {
+  background-color: #af50ae;
+}
+
+.navbar-collapse{
+  background-color: #af50ae;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 10;
+}
+
+/*typography*/
+strong{
+  font-size: 36px;
+  color: white;
+}
+
+
+.strong-inverse{
+  color: #793979;
+}
+
+p{
+  font-size: 22px;
+}
+
+h1{
+  color: #a258a0;
+}
+
+figure{
+  text-align: center;
+}
+
+figcaption{
+  font-size: 22px;
+  font-weight: bold;
+  color: #a258a0;
+}
+
+/*elements*/
+.btn{
+  height: 40px;
+  width: 190px;
+}
+
+.btn-regular{
+  color: #5f225f;
+  background-color: #f1b0fe;
+}
+
+.btn-inverse{
+  color: #f1b0fe;
+  background-color:#5f225f ;
+}
+
+.btn:hover{
+  background-color: white;
+}
+
+embed{
+  width: 500px;
+}
+
+/*remove the white-space above and below the navbar*/
+.navbar{
+  padding: 0px;
+}
+
+/*make the navbar 80px in height*/
+.navbar .container-fluid{
+  height: 80px;
+}
+
+/*change footer background color*/
+footer *{
+  background-color: #c964c7;
+}
+
+
+/*flexbox and gridBox properties*/
+.flexbox{
+  display: flex;
+  gap: 10px;
+  padding: 3%;
+}
+
+.gridbox{
+  display: grid;
+  gap: 10px;
+  padding: 3%;
+}
+
+.center{
+  justify-content: center;
+  align-items: center;
+}
+
+.flex30{
+  flex: 30%;
+}
+
+.flex70{
+  flex: 70%;
+}
+
+.flex50{
+  flex: 50%;
+}
+
+.flex25{
+  flex: 25%;
+}
+/*........*/
+
+
+/* spacers */
+.spacer{
+  height: 100px;
+}
+
+/*layout */
+.business-proposition{
+  background-image: linear-gradient(to right, #9c499c, #be74be);
+  height: 300px;
+  color: white;
+  border-radius: 15px;
+}
+
+#why-us .flexbox{
+  text-align: center;
+  border-radius: 15px;
+  margin-top: -40px;
+  background-color:#f1b0fe;
+}
+
+.banner{
+  height: 400px;
+  text-align: center;
+  background-color: #963a95;
+}
+
+/*image size */
+.sq-medium{
+  height: 300px;
+  width: 300px;
+  object-fit: contain;
+}
+
+
+.steps{
+  background-color: #af4fad;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  transform: translateX(-300px);
+  width: 800px;
+  position: relative;
+  opacity: 0%;
+  transition: all 1s ease-out;
+  transition-delay: 0.4s;
+
+}
+
+.nav-item a{
+  position: relative;
+}
+
+.nav-item a::before{
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin:right;
+  transition: transform 0.3s ease;
+}
+
+.nav-item a:hover::before {
+  transform: scaleX(1);
+  transform-origin:left;
+}
+
+
+
+/*animation*/
+@media (prefers-reduced-motion){
+  .steps{
+    opacity: 100%;
+    transform: translateX(0px);
+  }
+}
+
+.scroll-animation{
+  opacity: 100%;
+  transform: translateX(0px);
+}
+
+
+@media (prefers-reduced-motion : no-preference){
+.sq-medium{
+  opacity: 0%;
+  transform: scale(0.8);
+  transition: all 1s ease-out;
+}
+
+.vnr{
+  transition-delay: 0.1s;
+}
+.ce{
+  transition-delay: 0.2s;
+}
+.mo{
+  transition-delay: 0.4s;
+}
+.cnt{
+  transition-delay: 0.5s;
+}
+
+.icon-animation{
+  opacity: 100%;
+  transform: scale(1);
+}
+}
+
+/* for the index of steps */
+.steps-after {
+ position: absolute;
+ left: 96%;
+ top: 0%;
+ height: 40px;
+ width: 40px;
+ border-radius: 50%;
+ background-image: linear-gradient(to right, #d7a8d7 , #f7eef7);
+ color: #341834;
+ font-weight: bold;
+}
+
+
+.steps p{
+  color: #eea2f1;
+  font-weight: bold;
+}
+
+footer div{
+  padding:10px;
+}
+
+.wordcloud{
+  text-align: center;
+}
+
+
+
+
+@keyframes blink {
+  0% {
+    opacity: 100%;
+  }
+  33.33% {
+    opacity: 50%;
+  }
+  66.66% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 50%;
+  }
+}
+
+.greetingSection strong{
+  animation: blink 0.8s infinite;
+}
+
+
+@media (width < 600px){
+  strong{
+    font-size: 29px;
+  }
+
+  p{
+    font-size: 15px;
+  }
+
+  .flexbox{
+    flex-direction: column;
+  }
+
+  .btn{
+    width: 130px;
+  }
+
+  .website-possibilities{
+    flex-direction: row;
+    height: 300px;
+  }
+
+  .sq-medium{
+    height: 50px;
+    width: 50px;
+  }
+
+  figcaption{
+    font-size: 11px;
+  }
+
+  .steps{
+    width: 350px;
+  }
+
+}
+
+@media (599px < width < 1250px){
+  .sq-medium{
+    height: 100px;
+    width: 100px;
+
+  }
+  
+  figcaption{
+    font-size: 18px;
+  }
+
+  .website-possibilities{
+    height: 300px;
+  }
+
+}
+
+@media (600px <= width < 850px){
+  .steps{
+    width: 500px;
+  }
+
+}
+
+@media (width <600px){
+  .sq-medium{
+    height: 70px;
+    width: 70px;
+  }
+
+  .steps-after{
+    left: 90%;
+  }
+
+  embed{
+    width: 350px;
+  }
+
+}
