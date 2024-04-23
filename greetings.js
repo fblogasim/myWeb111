@@ -11,7 +11,7 @@ function normaliseBanner() {
         );
         greeting.innerHTML = "Hello!";
         greetingDescription.innerHTML =
-            "My name is Asim | Welcome to my website";
+            "We are Cenixa | Welcome to our website";
         hasNormalised = true;
     }
 }
@@ -22,18 +22,18 @@ function changeLanguage() {
     if (greeting.innerHTML === "Hello!") {
         greeting.innerHTML = "नमस्ते!";
         greetingDescription.innerHTML =
-            "मेरो नाम आसिम हो  ।मेरो वेबसाइटमा स्वागत छ";
+            "हामी सेनिक्सा | हाम्रो वेबसाइटमा स्वागत छ";
     } else if (greeting.innerHTML === "नमस्ते!") {
         greeting.innerHTML = "hola!";
         greetingDescription.innerHTML =
-            "Mi nombre es Asim | ¡Bienvenidos a mi sitio web!";
+            "Somos Cenixa | Bienvenido a nuestro sitio web!";
     } else if (greeting.innerHTML === "hola!") {
         greeting.innerHTML = "你好!";
-        greetingDescription.innerHTML = "我的名字是阿西姆 | 欢迎来到我的网站";
+        greetingDescription.innerHTML = "我們是 塞尼克薩 | 歡迎來到我們的網站";
     } else if (greeting.innerHTML === "你好!") {
         greeting.innerHTML = "Hello!";
         greetingDescription.innerHTML =
-            "My name is Asim | Welcome to my website";
+            "We are Cenixa | Welcome to our website";
     } else {
     }
 }

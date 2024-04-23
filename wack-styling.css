@@ -1,5 +1,95 @@
 /* only for the services page*/
 
+body{
+	position: relative;
+}
+
+
+.sidebar{
+	 height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 12;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #c983c6;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: -8vh;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  position:fixed;
+  top:40vh;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  z-index: 11;
+  display: none;
+}
+
+.openbtn:hover{
+	background-color: #c983c6; ;
+}
+
+
+@media (width < 758px){
+	.openbtn{
+	display: block;
+	}
+}
+
+
+
+
+@keyframes slideOut{
+	from{
+		margin-right:100vw;
+	}
+	to{
+		display: flex;
+		margin-right:0vw;
+	}
+}
+
+@keyframes slideIn{
+	from{
+		display: flex;
+		margin-right:0vw;
+	}
+	to{
+		display:none ;
+		margin-right:100vw;
+	}
+}
+
+
+
+
 .flexbox-diamond{
 	display:flex;
 	justify-content:center;
@@ -47,7 +137,7 @@
 		font-weight:bold;
 		color: white;
 		position:absolute;
-		top:25%;
+		top:24%;
 		left:50%;
 		transform: translate(-50%,-50%);
 	}
@@ -62,13 +152,14 @@
 
 
 .web-development:hover, .branding:hover, .maintainence:hover, .seo-optimisation:hover{
+	animation: none;
 	rotate:180deg;
 	transform:scale(1.5);
 	z-index:10;
 	background-color:#f1ccff;
 	border: 2px solid #a300cc;
 	box-shadow: -2px -2px 5px #290033;
-	animation: none;
+	
 	
 	img{
 		display:none;
@@ -135,23 +226,10 @@
 	border-radius:50%;
 }
 
-#funCar{
-	animation: fun-animation 5s forwards;
-	animation-delay: 3s;
-}
-
-@keyframes fun-animation{
-	0%{
-		margin-left: 0%;
-	}
-	100%{
-		margin-left: 100%;
-	}
-}
 
 @keyframes floaty{
 	0%{
-	 transform: translate(2px,2px);
+		transform: translate(2px,2px);
 	}
 	50%{
 		transform: translate(-2px, -2px) ;
@@ -199,7 +277,7 @@
 }
 
 #why-us{
-	height: 500px;
+	
 	
 	img{
 		height:300px;
@@ -208,17 +286,21 @@
 	}
 }
 
+
 .testimonial {
 	border: 1px solid #ddd;
 	display: flex;
 	padding: 20px;
-	height: 500px;
 	margin-bottom: 20px;
 	border-radius:15px;
 	justify-content: center;
 	align-items: center;
 	color: #fff;
 	transition: transform 0.4s ease-out;
+
+	blockquote{
+		font-size: 16px;
+	}
 }
 
 .t1,.t3{
@@ -235,12 +317,21 @@
 
 .testimonial:hover{
 	z-index:10;
-	transform:scale(1.2);
+	transform:scale(1.1);
 	box-shadow: 2px 2px 5px grey;
 }
 
 b{
 	color:#7a0099;
+}
+
+
+.navbar-container{
+	height: 100vh;
+	background-color: #c983c6;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 @media (width < 915px){
@@ -258,12 +349,12 @@ b{
 
 
 	.web-development, .branding, .maintainence, .seo-optimisation{
-		height:115px;
-		width:115px;
+		height:120px;
+		width:120px;
 
 		img{
-			width:200px;
-			height:200px;
+			width:210px;
+			height:210px;
 
 		}
 
@@ -274,8 +365,8 @@ b{
 			color: white;
 			position:absolute;
 			font-size:17px;
-			top:12%;
-			left:45%;
+			top:20%;
+			left:50%;
 			transform: translate(-50%,-50%);
 
 		}
@@ -293,6 +384,10 @@ b{
 
 			p{
 				font-size:7px;
+				margin-bottom: -10px;
+			}
+			a{
+				font-size: 7px;
 			}
 		}
 
@@ -300,25 +395,38 @@ b{
 }
 
 table {
-      width: 100%;
-      border-collapse: collapse;
-    }
+	width: 100%;
+	border-collapse: collapse;
+}
 
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-    }
+th, td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+}
 
-    th {
-      background-color: #f2f2f2;
-    }
+th {
+	background-color: #f2f2f2;
+}
 
-    @media screen and (max-width: 600px) {
-      table {
-        font-size: 12px;
-      }
-    }
+.row > *{
+	padding-left: 0px;
+}
+
+@media (width < 768px){
+	.navbar-container{
+		display: none;
+	}
+
+
+}
+
+
+@media screen and (max-width: 600px) {
+	table {
+		font-size: 12px;
+	}
+}
 
 @media (width < 500px){
 	#why-us{

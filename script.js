@@ -1,6 +1,6 @@
-const the_animation = document.querySelectorAll('.steps');
+var the_animation = document.querySelectorAll('.steps');
 
-const observer = new IntersectionObserver((entries) => {
+var observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('scroll-animation')
@@ -12,7 +12,7 @@ const observer = new IntersectionObserver((entries) => {
 
         })
 },
-{ threshold: 0.5
+{ threshold: 0.1
 });
 //
 for (let i = 0; i < the_animation.length; i++) {
@@ -22,9 +22,9 @@ for (let i = 0; i < the_animation.length; i++) {
 } 
 
 
-const the_animation1 = document.querySelectorAll('.sq-medium');
+var the_animation1 = document.querySelectorAll('.sq-medium');
 
-const observer1 = new IntersectionObserver((entries) => {
+var observer1 = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('icon-animation')
