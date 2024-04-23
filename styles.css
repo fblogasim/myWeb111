@@ -12,6 +12,7 @@ nav *{
   background-color: #af50ae;
 }
 
+
 .navbar-collapse{
   background-color: #af50ae;
   border-radius: 5px;
@@ -21,7 +22,7 @@ nav *{
 
 /*typography*/
 strong{
-  font-size: 36px;
+  font-size: 56px;
   color: white;
 }
 
@@ -34,9 +35,11 @@ p{
   font-size: 22px;
 }
 
-h1{
+h1,h2 {
   color: #a258a0;
 }
+
+
 
 figure{
   text-align: center;
@@ -69,7 +72,7 @@ figcaption{
 }
 
 embed{
-  width: 500px;
+  width: 400px;
 }
 
 /*remove the white-space above and below the navbar*/
@@ -145,7 +148,7 @@ footer *{
 }
 
 .banner{
-  height: 400px;
+  height: 90vh;
   text-align: center;
 /*  background-color: #963a95;*/
 }
@@ -165,8 +168,33 @@ footer *{
 }
 
 
+.what-we-do{
+ width:700px; 
+ text-align: left;
+}
+
+@media (width < 700px){
+.what-we-do{
+  width:auto;
+}
+
+.what-we-do h2{
+  font-size: 15px;
+}
+}
+
+#steps-involved{
+  background-color: #f093fb;
+  background-image: linear-gradient(to right, #963a95 , #ff66cc);
+}
+
+path{
+  background-image: background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+}
+
+
 .steps{
-  background-color: #af4fad;
+  background-color: #e6e6e6;
   border-radius: 15px;
   padding: 10px;
   margin: 10px;
@@ -252,6 +280,16 @@ a.nav-link.active{
 }
 }
 
+.contact-us{
+  clip-path: polygon(0 0, 100% 33%, 100% 100%, 0% 100%);
+}
+
+@media (width < 690px){
+  .contact-us{
+    clip-path: polygon(0 0, 100% 25%, 100% 100%, 0% 100%);
+  }
+}
+
 /* for the index of steps */
 .steps-after {
  position: absolute;
@@ -267,7 +305,7 @@ a.nav-link.active{
 
 
 .steps p{
-  color: #eea2f1;
+  color: #595959;
   font-weight: bold;
 }
 
@@ -386,7 +424,7 @@ footer div{
   }
 
   embed{
-    width: 350px;
+    width: 300px;
   }
 
 }
@@ -395,9 +433,129 @@ footer div{
   padding-bottom: 100px;
 }
 
+.card-img-top i{
+  font-size: 50px;
+}
+
+.col-sm-4.card{
+  border: none;
+}
+
+
+.section-image{
+  height: 400px;
+  width: 400px;
+  object-fit: contain;
+}
+
+@media (width < 700px){
+  .section-image{
+  height: 350px;
+  width: 350px;
+  
+}
+}
+
+.slanted{
+  clip-path: polygon(0 0, 100% 11%, 100% 86%, 0 100%);
+}
+
+.slanted-philosophy{
+  clip-path: polygon(0 0, 100% 7%, 100% 96%, 0% 100%);
+  background-color: pink;
+}
+
+@media (width < 600px){
+  .slanted{
+  clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 75%);
+   }
+
+   .slanted-philosophy{
+    clip-path: polygon(0 0, 100% 4%, 100% 98%, 0% 100%);
+   }
+  }
+
+#our-philosophy{
+  .card{
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+  }
+}
+
+
+.responsive-box {
+    margin-left: 10%;
+    height: 600px;
+    border: 5px solid #963396;
+    overflow: hidden;
+
+    display: grid;
+
+    gap: 20px;
+    align-content: start;
+    padding: 20px;
+    width: 1100px;
+    resize: horizontal;
+}
+
+.animated-div{
+  animation: resizeDiv 7s;
+}
+
+@keyframes resizeDiv {
+    from {
+        width: 1000px;
+    }
+    to {
+        width: 200px;
+    }
+}
+.left-box,
+.center-box,
+.right-box {
+    height: 200px;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.left-box:hover,
+.center-box:hover,
+.right-box:hover {
+    box-shadow: 5px 5px 10px grey;
+    border: 2px solid gold;
+    transform: scale(1.1);
+}
+
+.left-box {
+    background-color: red;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: trasform 0.5s;
+}
+
+.center-box {
+    background-color: green;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: trasform 0.5s;
+}
+
+.right-box {
+    background-color: blue;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: trasform 0.5s;
+}
+
+
+
+
 .area{ 
     width: 100%;
-    height: 400px;
+    height: 90vh;
     position: absolute;
     top: 80px;
     
@@ -413,6 +571,7 @@ footer div{
     overflow: hidden;
     z-index: -1;
     background-color: #963a95;
+    background-image: linear-gradient(to right, #963a95 , #ff66cc);
 }
 
 .circles li{

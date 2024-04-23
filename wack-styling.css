@@ -394,6 +394,20 @@ b{
 	}	
 }
 
+#why-us .card{
+	background-color: white;
+	border: none;
+
+	i{
+		font-size: 50px;
+	}
+
+	h4{
+		font-size: 22px;
+		color: #a258a0;
+	}
+}
+
 table {
 	width: 100%;
 	border-collapse: collapse;
