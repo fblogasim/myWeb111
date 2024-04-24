@@ -45,3 +45,13 @@ for (let i = 0; i < the_animation1.length; i++) {
  observer1.observe(elements1);
 } 
 
+
+    function changeColorMobile(color){
+        document.getElementById("our-philosophy").style.backgroundColor = color;
+    }
+    
+    function startAnimation(){
+        var flexbox = document.getElementById("shrinking-box");
+        flexbox.style.animation = "shrink 10s infinite";
+    }
+

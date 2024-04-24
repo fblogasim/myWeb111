@@ -441,9 +441,3 @@ th {
 		font-size: 12px;
 	}
 }
-
-@media (width < 500px){
-	#why-us{
-		height: 720px;
-	}
-}

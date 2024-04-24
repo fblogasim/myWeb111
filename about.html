@@ -27,10 +27,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+            <a class="nav-link" href="./index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./about.html">About</a>
+            <a class="nav-link active"  aria-current="page" href="./about.html">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./services.html">Services</a>
@@ -109,8 +109,15 @@
     </p>
   </div>
 </div>
-<div class="col-md-4 d-flex justify-content-center align-items-center">
+<div class="col-md-4 d-flex justify-content-center align-items-center position-relative">
+  <div>
   <img src = "./assets/our-philosophy.png" class="section-image">
+  <div class = "shrinking-box" id = "shrinking-box" onmouseover = "startAnimation()">
+  <div onmouseover = "changeColorMobile('red')" onmouseout = "changeColorMobile('pink')"></div>
+    <div onmouseover = "changeColorMobile('green')" onmouseout = "changeColorMobile('pink')"></div>
+    <div onmouseover = "changeColorMobile('blue')" onmouseout = "changeColorMobile('pink')"></div>
+</div>
+</div>
 </div>
 </div>
       <div class="card" id = "resizing-div">
@@ -174,11 +181,11 @@
 </p>
 </section>
 
-<hr>
+
 <section id = "get-in-touch" class = "p-5 contact-us bg-dark text-light">
   <h1>Get In Touch</h1>
   <p>Ready to take your digital presence to the next level? Contact us today to discuss how we can help your business</p>
-  <p class = "text-center"><a class = "btn btn-inverse">Get in touch</a></p>
+  <p class = "text-center"><a href = "./Contact.html" class = "btn btn-inverse">Get in touch</a></p>
 </section>
 </div>
 
@@ -201,7 +208,7 @@
               <p>Email: contact@cenixa.net</p>
               <p>Phone: 0410 450 796</p>
               <p>Address: 27 - 29 Bigge Street, Liverpool NSW 2170, Australia</p>
-              <a href="#" class="btn btn-outline-light">Work with Us</a>
+              <a href="https://forms.gle/Q8QGAd7rmbtFbPvz9" class="btn btn-outline-light">Work with Us</a>
             </div>
           </div>
         </div>
