@@ -19,6 +19,42 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .error {
+        color: red;
+      }
+
+      body {
+        font-size: 22px;
+
+        input {
+          font-size: 22px;
+          height: 50px;
+          width: 350px;
+          border: none;
+          outline: 2px black solid;
+        }
+
+        textarea {
+          width: 350px;
+          border: none;
+          outline: 2px black solid;
+        }
+
+        input:focus,
+        textarea:focus {
+          outline: 2px purple solid;
+          box-shadow: 3px 3px 5px grey;
+        }
+
+        label {
+          color: purple;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -63,14 +99,87 @@
       </nav>
     </header>
 
-    <div class="flexbox center contact-form-container">
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSfh59A5liTADv9e5wj6zY12NY6WmcbAOgrfLJUStfae2GRIyw/viewform?embedded=true"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0"
-        >Loading…</iframe
-      >
+    <div class="flexbox">
+      <div class="flex50 flexbox center">
+        <div>
+          <img src="./assets/contact-us.png" class="section-image" />
+          <br />
+          <p class="fs-3">
+            We'd love to hear from you! Whether you have questions about our
+            services, want to discuss a project, or just want to say hello, feel
+            free to reach out to us using the contact form below or the contact
+            information provided. Our team is ready to assist you and provide
+            the best solutions for your needs.
+          </p>
+
+          <h2>Other modes of contact:</h2>
+          <p>
+            <b>Email</b>:
+            <a href="mailto:contact@cenixa.com.au">contact@cenixa.com.au</a>
+            <br />
+            <b>Phone</b>: 0410 450 796
+          </p>
+        </div>
+      </div>
+
+      <div class="flex50 d-flex justify-content-center">
+        <div>
+          <h1>Contact Us</h1>
+          <form
+            id="contactForm"
+            onsubmit="return validateForm()"
+            method="post"
+            action="./PHPMailer/formHandler.php"
+          >
+            <div class="form-group">
+              <label for="email">Email Address:</label>
+              <br />
+              <input type="email" id="email" name="email" required />
+              <br />
+              <span class="error" id="emailError"></span>
+            </div>
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <br />
+              <input type="text" id="name" name="name" required />
+              <br />
+              <span class="error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject:</label>
+              <br />
+              <input type="text" id="subject" name="subject" required />
+              <br />
+              <span class="error" id="subjectError"></span>
+            </div>
+            <div class="form-group">
+              <label for="message">Message:</label>
+              <br />
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+              <br />
+              <span class="error" id="messageError"></span>
+            </div>
+            <div class="form-group">
+              <label for="contactNumber">Contact Number:</label>
+              <br />
+              <input
+                type="tel"
+                id="contactNumber"
+                name="contactNumber"
+                required
+              />
+              <br />
+              <span class="error" id="contactNumberError"></span>
+            </div>
+            <button class="btn btn-regular" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
     </div>
 
     <footer class="text-white">
@@ -83,11 +192,19 @@
               <li><a href="./about.html" class="text-white">About</a></li>
               <li><a href="./services.html" class="text-white">Services</a></li>
               <li><a href="Contact.html" class="text-white">Contact</a></li>
+              <li>
+                <a href="./privacy-policy.html" class="text-white"
+                  >Privacy Policy</a
+                >
+              </li>
             </ul>
           </div>
           <div class="col-md-6">
             <h5>Contact Information</h5>
-            <p>Email: contact@cenixa.net</p>
+            <p>
+              Email:
+              <a href="mailto:contact@cenixa.com.au">contact@cenixa.com.au</a>
+            </p>
             <p>Phone: 0410 450 796</p>
             <p>Address: 27 - 29 Bigge Street, Liverpool NSW 2170, Australia</p>
             <p>ABN: 52382236855</p>
@@ -100,6 +217,80 @@
         </div>
       </div>
     </footer>
-    <script src="script.js"></script>
+    <script>
+      function validateForm() {
+        let isValid = true;
+        const email = document.getElementById("email");
+        const name = document.getElementById("name");
+        const subject = document.getElementById("subject");
+        const message = document.getElementById("message");
+        const contactNumber = document.getElementById("contactNumber");
+
+        // Email validation
+        if (!email.value.trim()) {
+          document.getElementById("emailError").textContent =
+            "Please enter an email address.";
+          isValid = false;
+        } else if (!validateEmail(email.value.trim())) {
+          document.getElementById("emailError").textContent =
+            "Please enter a valid email address.";
+          isValid = false;
+        } else {
+          document.getElementById("emailError").textContent = "";
+        }
+
+        // Name validation
+        if (!name.value.trim()) {
+          document.getElementById("nameError").textContent =
+            "Please enter your name.";
+          isValid = false;
+        } else {
+          document.getElementById("nameError").textContent = "";
+        }
+
+        // Subject validation
+        if (!subject.value.trim()) {
+          document.getElementById("subjectError").textContent =
+            "Please enter the subject.";
+          isValid = false;
+        } else {
+          document.getElementById("subjectError").textContent = "";
+        }
+
+        // Message validation
+        if (!message.value.trim()) {
+          document.getElementById("messageError").textContent =
+            "Please enter your message.";
+          isValid = false;
+        } else {
+          document.getElementById("messageError").textContent = "";
+        }
+
+        // Contact number validation
+        if (!contactNumber.value.trim()) {
+          document.getElementById("contactNumberError").textContent =
+            "Please enter your contact number.";
+          isValid = false;
+        } else if (!validatePhoneNumber(contactNumber.value.trim())) {
+          document.getElementById("contactNumberError").textContent =
+            "Please enter a valid contact number.";
+          isValid = false;
+        } else {
+          document.getElementById("contactNumberError").textContent = "";
+        }
+
+        return isValid;
+      }
+
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+
+      function validatePhoneNumber(phoneNumber) {
+        const re = /^\d{10}$/;
+        return re.test(phoneNumber);
+      }
+    </script>
   </body>
 </html>
