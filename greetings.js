@@ -2,7 +2,7 @@ var hasNormalised = false;
 var responsiveBox = document.getElementById("responsive-box");
 setInterval(makeResponsive, 10);
 normaliseBanner();
-myInterval = setInterval(changeLanguage, 5000);
+myInterval = setInterval(changeLanguage, 3000);
 
 function normaliseBanner() {
     if (!hasNormalised) {
@@ -51,36 +51,33 @@ function makeResponsive() {
     textArea.innerHTML = responsiveBox.offsetWidth;
 }
 
-function changeColor(color){
+function changeColor(color) {
     document.getElementById("our-philosophy").style.backgroundColor = color;
 }
 
+var the_animation = document.querySelectorAll(".responsive-box");
 
-var the_animation = document.querySelectorAll('.responsive-box');
-
-var observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            setTimeout(forwardWidth, 7000);
-            entry.target.classList.add('animated-div');
-        }
-        else {
+var observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                setTimeout(forwardWidth, 7000);
+                entry.target.classList.add("animated-div");
+            } else {
                 //uncomment the following line of code if you want the animation to repeat again
                 //entry.target.classList.remove('scroll-animation')
             }
-
-        })
-},
-{ threshold: 0.1
-});
+        });
+    },
+    { threshold: 0.1 },
+);
 //
 for (let i = 0; i < the_animation.length; i++) {
- const elements = the_animation[i];
+    const elements = the_animation[i];
 
- observer.observe(elements);
-} 
-
-function forwardWidth(){
-    responsiveBox.style.width = '200px';
+    observer.observe(elements);
 }
 
+function forwardWidth() {
+    responsiveBox.style.width = "200px";
+}

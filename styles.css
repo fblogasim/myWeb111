@@ -1,5 +1,5 @@
 /*Google Fonts*/
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
 * {
   color-scheme: light;
@@ -7,7 +7,7 @@
 
 body {
   font-size: 22px;
-  font-family: "Playfair Display", serif;
+  font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
@@ -19,13 +19,23 @@ nav * {
 
 .navbar-custom {
   background-color: #af50ae;
+  background: linear-gradient(to right, #af50ae, #ff33cc);
 }
 
 .navbar-collapse {
-  background-color: #af50ae;
   border-radius: 5px;
   padding: 10px;
   z-index: 10;
+
+  a {
+    color: lightgrey;
+  }
+}
+
+@media (width < 992px) {
+  .navbar-collapse {
+    background-color: #af50ae;
+  }
 }
 
 /*typography*/
@@ -144,8 +154,9 @@ embed {
 }
 
 /*change footer background color*/
-footer * {
+footer {
   background-color: #c964c7;
+  background: linear-gradient(to right, #af50ae, #ff33cc);
 }
 
 /*flexbox and gridBox properties*/
@@ -190,7 +201,7 @@ footer * {
 
 /*layout */
 .business-proposition {
-  background-image: linear-gradient(to right, #9c499c, #be74be);
+  background-image: linear-gradient(to right, #af50ae, #ff33cc);
   height: 300px;
   color: white;
   border-radius: 15px;
@@ -792,6 +803,21 @@ footer div {
   }
 }
 
+#get-in-touch {
+  background-color: #990099;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: 100vh;
+}
+
+@media (width > 900px) {
+  #get-in-touch div {
+    width: 700px;
+  }
+}
+
 .seo-container {
   padding-left: 60px;
   padding-right: 60px;
@@ -804,6 +830,13 @@ footer div {
   padding-bottom: 10vh;
 }
 
+@media (width < 600px) {
+  .seo-container {
+    color: white;
+    padding: 5px;
+  }
+}
+
 @media (width < 700px) {
   .shrinking-box {
     display: flex;
@@ -813,3 +846,5 @@ footer div {
     display: none;
   }
 }
+
+/*for portfolio*/
