@@ -83,10 +83,6 @@ body {
 	}
 }
 
-.wrapper{
-	position: relative;
-	overflow-x: hidden;
-}
 .flexbox-diamond {
 	display: flex;
 	justify-content: center;
@@ -98,6 +94,9 @@ body {
 	}
 }
 
+.page-wrapper{
+	overflow-x: hidden;
+}
 .gridbox-diamond {
 	display: grid;
 	grid-template-columns: 150px 150px 150px;
