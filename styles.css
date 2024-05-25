@@ -19,7 +19,7 @@ nav * {
 
 .navbar-custom {
   background-color: #af50ae;
-  background: linear-gradient(to right, #af50ae, #ff33cc);
+  background-image: linear-gradient(to right, #963a95, #ff66cc);
 }
 
 .navbar-collapse {
@@ -28,7 +28,7 @@ nav * {
   z-index: 10;
 
   a {
-    color: lightgrey;
+    color: white;
   }
 }
 
@@ -59,7 +59,25 @@ h3 {
   font-weight: bold;
 }
 
-figure {
+.benifits_of_website_mobile{
+  display: none;
+}
+
+.benifits_of_website_web{
+  display: block;
+}
+
+@media (width<800px){
+  .benifits_of_website_mobile{
+    display: flex;
+  }
+
+  .benifits_of_website_web{
+  display: none;
+}
+}
+
+figure{
   text-align: center;
 }
 
@@ -311,12 +329,11 @@ path {
   transform-origin: left;
 }
 
-a.nav-link {
-  font-weight: bold;
-}
 
 a.nav-link.active {
   color: white !important;
+  text-shadow: 3px 3px 15px #2e0524;
+  font-weight: bold;
 }
 
 /*animation*/
@@ -434,21 +451,6 @@ footer div {
   animation: blink 0.8s infinite;
 }
 
-@media (width < 400px) {
-  figcaption {
-    display: none;
-  }
-  figure:hover {
-    transform: scale(1.2);
-
-    figcaption {
-      display: block;
-      position: absolute;
-      background-color: white;
-      padding: 5px;
-    }
-  }
-}
 
 @media (width < 800px) {
   strong {
@@ -804,12 +806,13 @@ footer div {
 }
 
 #get-in-touch {
-  background-color: #990099;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
   height: 100vh;
+   background: rgb(175,80,174);
+background: radial-gradient(circle, rgba(175,80,174,1) -30%, rgba(0,0,0,1) 100%); 
 }
 
 @media (width > 900px) {
