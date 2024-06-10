@@ -95,7 +95,7 @@ body {
 }
 
 .page-wrapper{
-	overflow-x: hidden;
+	/*overflow-x: hidden;*/
 }
 .gridbox-diamond {
 	display: grid;
@@ -318,7 +318,7 @@ h4 {
 	align-items: center;
 }
 
-@media (width < 915px) {
+@media (392px < width < 915px) {
 	.flexbox {
 		height: 800px;
 	}
@@ -369,6 +369,62 @@ h4 {
 			}
 			a {
 				font-size: 7px;
+			}
+		}
+	}
+}
+
+@media (width < 393px) {
+	.flexbox {
+		height: 800px;
+	}
+
+	.gridbox-diamond {
+		grid-template-columns: 70px 70px 70px;
+		grid-template-rows: 70px 70px 70px;
+	}
+
+	.web-development,
+	.branding,
+	.maintainence,
+	.seo-optimisation {
+		height: 90px;
+		width: 90px;
+
+		img {
+			width: 210px;
+			height: 210px;
+		}
+
+		h4 {
+			rotate: -45deg;
+			display: block;
+			font-weight: bold;
+			color: white;
+			position: absolute;
+			font-size: 13px;
+			top: 18%;
+			left: 55%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	.web-development:hover,
+	.branding:hover,
+	.maintainence:hover,
+	.seo-optimisation:hover {
+		transform: scale(2);
+
+		.card {
+			display: block;
+			rotate: 180deg;
+
+			p {
+				font-size: 5px;
+				margin-bottom: -10px;
+			}
+			a {
+				font-size: 5px;
 			}
 		}
 	}
